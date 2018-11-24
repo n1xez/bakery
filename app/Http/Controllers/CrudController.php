@@ -91,7 +91,7 @@ abstract class CrudController extends Controller
         }
         $model->update($request->all());
 
-        return redirect()->back()->with('success', 'model');
+        return redirect(route($this->model->view . '.index'))->with('success', 'model');
     }
 
     /**

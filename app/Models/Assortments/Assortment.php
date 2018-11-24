@@ -25,12 +25,20 @@ class Assortment extends BaseModel
         'shop_id',
         'product_id',
         'quantity',
+        'yellow_quantity',
         'warning_quantity',
     ];
 
     public function getCountToCookAttribute()
     {
-        return $this->warning_quantity - $this->quantity;
+        return $this->yellow_quantity - $this->quantity;
+    }
+
+    public function getWarningColorAttribute()
+    {
+        return $this->yellow_quantity >= $this->quantity
+            ? ($this->warning_quantity >= $this->quantity ? 'red' : 'yellow')
+            : '';
     }
 
     public function shop()

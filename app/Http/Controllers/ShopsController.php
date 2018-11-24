@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Assortments\Assortment;
 use App\Models\Shops\Shop;
+use App\Models\Assortments\Assortment;
 
 /**
  * Class ShopsController
@@ -23,9 +23,10 @@ class ShopsController extends CrudController
     public function show($id)
     {
         $assortments = Assortment::with(['shop', 'product'])
-            ->whereColumn('quantity', '<', 'warning_quantity')
+            ->whereColumn('quantity', '<', 'yellow_quantity')
             ->where('shop_id', $id)
-            ->get();
+            ->get()
+            ->sortByDesc('countToCook');
 
         return view('shops.detail', compact('assortments'));
     }

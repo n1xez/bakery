@@ -1,0 +1,42 @@
+.panel {
+    height: 188px;
+    /*display: flex;
+    justify-content: center;
+    align-items: center;*/
+    margin: 10px;
+
+
+    border-radius: 20px;
+
+
+    &.red {
+      color: #fefefe;
+      background: #DD2C00;
+      border: 3px solid #B71C1C;
+    }
+
+    &.yellow {
+      color: #1c1c1c;
+      background: #FFDE03;
+      border: 3px solid #DAA800;
+    }
+}
+
+.panel-content {
+
+  &__count {
+    font-size: 8em;
+    line-height: 1em;
+    margin-left: 20px;
+  }
+
+  &__title {
+    font-size: 4em;
+    line-height: 1em;
+    text-align: right;
+    margin-right: 20px;
+    overflow: hidden;
+    height: 10vh;
+  }
+}
+
