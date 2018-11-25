@@ -27,14 +27,8 @@ class Decoder
 
     public function handle()
     {
-        /*dd($this->getStore());*/
-
         $dishes = $this->getDishes('Product');
         $items = $this->getItems($dishes);
-        dd($dishes->take(5));
-
-
-        dd($dishes);
     }
 
     private function getItems($dishes)
@@ -59,7 +53,6 @@ class Decoder
 
             $result->put($dish['name'], $sumProducts - $sumSale);
         }
-        dd($result);
 
         return $result;
     }

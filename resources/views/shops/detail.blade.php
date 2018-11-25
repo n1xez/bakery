@@ -3,7 +3,7 @@
 @section('title', 'Page title')
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid" id="monitor-from">
     <div class="row">
         @foreach($assortments as $assortment)
             <div class="col-4">
