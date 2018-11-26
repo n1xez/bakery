@@ -43,7 +43,7 @@ class SyncAssortment extends Command
      */
     public function handle()
     {
-        $this->service->handel();
+        $this->service->handle();
 
         return 'complete';
     }

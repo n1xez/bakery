@@ -14,7 +14,7 @@ class AlterAssortmentsTable extends Migration
     public function up()
     {
         Schema::table('assortments', function (Blueprint $table) {
-            $table->unsignedInteger('yellow_quantity')->nullable();
+            $table->unsignedInteger('yellow_quantity')->nullable()->after('warning_quantity');
         });
     }
 

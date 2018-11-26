@@ -55,8 +55,8 @@ class ActivityManager
     private function getAllProblemAssortment()
     {
         return $this->assortment
-            ->whereColumn('quantity', '>', 'yellow_quantity')
-            ->orWhereColumn('quantity', '>', 'warning_quantity')
+            ->whereColumn('quantity', '<', 'yellow_quantity')
+            ->orWhereColumn('quantity', '<', 'warning_quantity')
             ->get();
     }
 
@@ -66,7 +66,7 @@ class ActivityManager
      */
     private function closeAllWithoutProblem($currentActivities, $problemAssortment)
     {
-        $activitiesForClosing = $currentActivities->expect($problemAssortment->pluck('id'));
+        $activitiesForClosing = $currentActivities->except($problemAssortment->pluck('id')->toArray());
         foreach ($activitiesForClosing as $activity) {
             $this->activityFinish($activity);
         }

@@ -2,6 +2,7 @@
 
 namespace App\Models\Assortments;
 
+use App\Models\Activities\Activity;
 use App\Models\BaseModel;
 use App\Models\Products\Product;
 use App\Models\Shops\Shop;
@@ -49,5 +50,10 @@ class Assortment extends BaseModel
     public function product()
     {
         return $this->belongsTo(Product::class);
+    }
+
+    public function activities()
+    {
+        return $this->hasMany(Activity::class);
     }
 }

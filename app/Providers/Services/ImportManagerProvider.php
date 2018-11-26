@@ -24,6 +24,6 @@ class ImportManagerProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('App\Services\Imports\ImportManager',
-            'App\Services\Imports\MsSqlManager');
+            'App\Services\Imports\FakeManager');
     }
 }

@@ -23,5 +23,6 @@ class Shop extends BaseModel
         'title',
         'description',
         'address',
+        'article',
     ];
 }

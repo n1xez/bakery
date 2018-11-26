@@ -3,6 +3,18 @@
 @section('title', 'Page title')
 
 @section('content')
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+
+
 {{ Form::model($model, [
        'url' => route('assortments.update', $model->id),
        'method' => 'PATCH',
@@ -24,7 +36,11 @@
     </div>
     <div class="form-group">
         {{ Form::label('quantity', 'Текущие количество') }}
-        {{ Form::number('quantity', null, ['class' => 'form-control']) }}
+        {{ Form::number('quantity', null, ['class' => 'form-control', 'readonly']) }}
+    </div>
+    <div class="form-group">
+        {{ Form::label('warning_quantity', 'Желтая зона') }}
+        {{ Form::number('yellow_quantity', null, ['class' => 'form-control']) }}
     </div>
     <div class="form-group">
         {{ Form::label('warning_quantity', 'Красная зона') }}

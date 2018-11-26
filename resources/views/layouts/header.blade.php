@@ -15,6 +15,9 @@
                 <li class="nav-item {{ Request::is('assortments*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('assortments.index') }}">АССОРТИМЕНТ</a>
                 </li>
+                <li class="nav-item {{ Request::is('report*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('report') }}">ОТЧЕТ</a>
+                </li>
             </ul>
         </div>
     </nav>
