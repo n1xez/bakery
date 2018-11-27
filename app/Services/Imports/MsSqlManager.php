@@ -64,17 +64,16 @@ class MsSqlManager implements ImportManager
      */
     public function getDishes()
     {
-        return $this->query($this->sql);
+        return $this->query();
     }
 
     /**
-     * @param $query
      * @return array
      */
-    public function query($query)
+    public function query()
     {
         try {
-            return collect($this->readData($query));
+            return collect($this->readData());
         } catch (Exception $e) {
             return null;
         }
@@ -102,15 +101,14 @@ class MsSqlManager implements ImportManager
     }
 
     /**
-     * @param $query
      * @return array
      * @throws Exception
      */
-    function readData($query)
+    function readData()
     {
         $connection = $this->openConnection();
 
-        $result = sqlsrv_query($connection, $query);
+        $result = sqlsrv_query($connection, $this->sql);
         if ($result == FALSE) {
             throw new Exception(sqlsrv_errors());
         }
