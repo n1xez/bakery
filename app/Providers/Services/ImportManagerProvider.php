@@ -23,7 +23,11 @@ class ImportManagerProvider extends ServiceProvider
      */
     public function register()
     {
+        $class = env('APP_ENV', 'production') == 'production'
+            ? 'App\Services\Imports\MsSqlManager'
+            : 'App\Services\Imports\FakeManager';
+
         $this->app->bind('App\Services\Imports\ImportManager',
-            'App\Services\Imports\FakeManager');
+            $class);
     }
 }

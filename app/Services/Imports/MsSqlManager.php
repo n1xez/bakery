@@ -31,6 +31,11 @@ class MsSqlManager implements ImportManager
     private $password;
 
     /**
+     * @var string
+     */
+    private $sql;
+
+    /**
      * MsSqlManager constructor.
      */
     public function __construct()
@@ -39,6 +44,7 @@ class MsSqlManager implements ImportManager
         $this->database = config('mssql.database');
         $this->username = config('mssql.username');
         $this->password = config('mssql.password');
+        $this->sql = trim(preg_replace('/\s\s+/', ' ', config('mssql.sql')));
     }
 
     /**
@@ -58,7 +64,7 @@ class MsSqlManager implements ImportManager
      */
     public function getDishes()
     {
-        return $this->query(config('mssql.sql'));
+        return $this->query($this->sql);
     }
 
     /**
