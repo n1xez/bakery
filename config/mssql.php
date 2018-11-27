@@ -2,7 +2,7 @@
 
 return [
     'host' => env('DB_FOREIGN_HOST', 'localhost'),
-    'port' => env('DB_FOREIGN_PORT', '1433'),
+    'port' => env('DB_FOREIGN_PORT', ''),
     'database' => env('DB_FOREIGN_DATABASE', 'Resto'),
     'username' => env('DB_FOREIGN_USERNAME', 'sa'),
     'password' => env('DB_FOREIGN_PASSWORD', ''),

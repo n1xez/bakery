@@ -89,7 +89,7 @@ class MsSqlManager implements ImportManager
         $connectionOptions = [
             'Database' => $this->database,
             'Uid' => $this->username,
-            'PWD' => $this->database,
+            'PWD' => $this->password,
         ];
 
         $connection = sqlsrv_connect($this->server, $connectionOptions);
