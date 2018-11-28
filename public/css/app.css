@@ -15793,6 +15793,6 @@ readers do not read off random characters that represent icons */
   text-align: right;
   margin-right: 20px;
   overflow: hidden;
-  height: 10vh;
+  height: 60px;
 }
 
