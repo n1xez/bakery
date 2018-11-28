@@ -104,7 +104,7 @@ class MsSqlManager implements ImportManager
      * @return array
      * @throws Exception
      */
-    function readData()
+    private function readData()
     {
         $connection = $this->openConnection();
 
@@ -119,6 +119,20 @@ class MsSqlManager implements ImportManager
 
         sqlsrv_free_stmt($result);
         sqlsrv_close($connection);
+
+        return $this->decode($data);
+    }
+
+    private function decode($data)
+    {
+        foreach ($data as $line => $row) {
+            foreach ($row as $key => $column) {
+                if (is_string($column)) {
+                    $row[$key] = iconv ( 'cp1251' , "UTF-8" , $column);
+                }
+            }
+            $data[$line] = $row;
+        }
 
         return $data;
     }

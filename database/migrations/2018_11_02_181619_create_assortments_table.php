@@ -17,7 +17,7 @@ class CreateAssortmentsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('shop_id');
             $table->unsignedInteger('product_id');
-            $table->unsignedInteger('quantity')->nullable();
+            $table->integer('quantity')->nullable();
             $table->unsignedInteger('warning_quantity')->nullable();
 
             $table->timestamps();

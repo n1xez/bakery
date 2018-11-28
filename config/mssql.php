@@ -11,7 +11,7 @@ return [
 	result.product product,
 	CAST(CAST(store.xml as xml).query(\'/r/name/customValue/node()\') as nvarchar(max)) as storageName,
 	CAST(CAST(product.xml as xml).query(\'/r/name/customValue/node()\') as nvarchar(max)) as productName,
-	result.amount as amount
+	result.amount as quantity
 FROM (
 	SELECT query.store, query.product, sum(query.amount) amount
 	FROM (
