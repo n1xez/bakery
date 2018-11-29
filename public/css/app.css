@@ -15796,3 +15796,18 @@ readers do not read off random characters that represent icons */
   height: 60px;
 }
 
+.badge {
+  padding: 5px 20px;
+  border-radius: 10px;
+}
+
+.badge__red {
+  color: #fefefe;
+  background: #DD2C00;
+}
+
+.badge__yellow {
+  color: #1c1c1c;
+  background: #FFDE03;
+}
+

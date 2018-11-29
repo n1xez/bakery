@@ -42,6 +42,22 @@ class ActivityController extends Controller
 
         $activities = $query->get();
 
+        $activities->map(function ($activity) {
+            $activity->time = $this->calculateTime($activity->time);
+        });
+
         return view('activities.index', compact('activities', 'shop_id', 'start_date', 'finish_date'));
+    }
+
+    /**
+     * @param $time
+     * @return string
+     */
+    private function calculateTime($time)
+    {
+        $hours = floor($time / 3600);
+        $minutes = floor($time / 3600) % 60;
+        $seconds = $time % 60;
+        return sprintf("%s:%02d:%02d", $hours, $minutes, $seconds);
     }
 }

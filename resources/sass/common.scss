@@ -40,3 +40,19 @@
   }
 }
 
+.badge {
+
+  padding: 5px 20px;
+  border-radius: 10px;
+
+  &__red {
+    color: #fefefe;
+    background: #DD2C00;
+  }
+
+  &__yellow {
+    color: #1c1c1c;
+    background: #FFDE03;
+  }
+}
+

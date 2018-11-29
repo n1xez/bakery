@@ -42,7 +42,7 @@
                 <tr>
                     <td scope="row">{{ $activity->assortment->shop->title }}</td>
                     <td>{{ $activity->assortment->product->title }}</td>
-                    <td>{{ $activity->color }}</td>
+                    <td><span class="badge badge__{{ $activity->color }}">{{ $activity->color }}</span></td>
                     <td>{{ $activity->time }}</td>
                 </tr>
             @endforeach
