@@ -19,6 +19,7 @@
                     <a class="nav-link" href="{{ route('report') }}">ОТЧЕТ</a>
                 </li>
             </ul>
+            @include('layouts.login')
         </div>
     </nav>
 </div>

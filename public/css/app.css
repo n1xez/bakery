@@ -15760,6 +15760,10 @@ readers do not read off random characters that represent icons */
   width: auto;
 }
 
+.wrapper {
+  margin-top: 20px;
+}
+
 .panel {
   height: 188px;
   /*display: flex;

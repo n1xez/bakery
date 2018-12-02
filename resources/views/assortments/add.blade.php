@@ -31,6 +31,10 @@
         {{ Form::number('warning_quantity', null, ['class' => 'form-control']) }}
     </div>
     <div class="form-group">
+        {{ Form::label('volume_production', 'Объем производства') }}
+        {{ Form::number('volume_production', null, ['class' => 'form-control']) }}
+    </div>
+    <div class="form-group">
         {{ Form::submit('Создать!', ['class' => 'btn btn-primary']) }}
         <a class="btn btn-secondary" href="{{ route('assortments.index') }}">Назад</a>
     </div>

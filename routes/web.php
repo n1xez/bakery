@@ -12,3 +12,7 @@ Route::resource('products', 'ProductsController');
 Route::resource('assortments', 'AssortmentsController');
 
 Route::get('report', 'ActivityController@index')->name('report');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

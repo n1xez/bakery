@@ -17,6 +17,7 @@
             <th scope="col">Текущие количество</th>
             <th scope="col">Нормальное количество</th>
             <th scope="col">Критическое количество</th>
+            <th scope="col">Объем производства</th>
             <th scope="col">Дата создания</th>
             <th scope="col">Дата изменения</th>
             <th scope="col">Редактирвоать</th>
@@ -31,6 +32,7 @@
                 <td>{{ $model->quantity }}</td>
                 <td>{{ $model->yellow_quantity }}</td>
                 <td>{{ $model->warning_quantity }}</td>
+                <td>{{ $model->volume_production }}</td>
                 <td>{{ $model->created_at }}</td>
                 <td>{{ $model->updated_at }}</td>
                 <td>
