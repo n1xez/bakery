@@ -1,6 +1,6 @@
 <div class="content">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"><i class="fas fa-tv"></i></a>
+        <a class="navbar-brand" href="/"><i class="fas fa-tv"></i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -18,6 +18,11 @@
                 <li class="nav-item {{ Request::is('report*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('report') }}">ОТЧЕТ</a>
                 </li>
+                @if(Auth::check() && Auth::user()->is_admin)
+                <li class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('users.index') }}">ПОЛЬЗОВАТЕЛИ</a>
+                </li>
+                @endif
             </ul>
             @include('layouts.login')
         </div>

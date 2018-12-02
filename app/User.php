@@ -2,13 +2,23 @@
 
 namespace App;
 
+use App\Traits\AuthorisationTrait;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, AuthorisationTrait;
+
+    /**
+     * @var string
+     */
+    public $view = 'users';
+
+    /**
+     * @var bool
+     */
+    public $isRequireAuthorization = true;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +26,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
+        'is_admin',
     ];
 
     /**

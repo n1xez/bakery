@@ -7,12 +7,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
+
 Route::resource('shops', 'ShopsController');
 Route::resource('products', 'ProductsController');
 Route::resource('assortments', 'AssortmentsController');
+Route::resource('users', 'UsersController');
 
 Route::get('report', 'ActivityController@index')->name('report');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

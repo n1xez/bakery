@@ -17,7 +17,7 @@
             {{ Form::text('article', null, ['class' => 'form-control']) }}
         </div>
         <div class="form-group">
-            {{ Form::submit('Обвноить!', ['class' => 'btn btn-primary']) }}
+            {{ Form::submit('Обновить!', ['class' => 'btn btn-primary']) }}
             <a class="btn btn-secondary" href="{{ route('products.index') }}">Отмена</a>
         </div>
 {{ Form::close() }}

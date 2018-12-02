@@ -26,6 +26,9 @@ abstract class CrudController extends Controller
      */
     public function index()
     {
+        if ($this->model->canNotUseModel) {
+            abort(401, 'Залогинтесь');
+        }
         $models = $this->model->all();
 
         return view($this->model->view . '.index', compact('models'));
@@ -39,7 +42,7 @@ abstract class CrudController extends Controller
     {
         $model = $this->model->find($id);
         if (!$model) {
-            abort(404, 'не нашел');
+            abort(404, 'Страница не найдена');
         }
 
         return view($this->model->view . '.detail', compact('model'));
@@ -50,6 +53,10 @@ abstract class CrudController extends Controller
      */
     public function create()
     {
+        if ($this->model->canNotUseModel) {
+            abort(401, 'Залогинтесь');
+        }
+
         return view($this->model->view . '.add');
     }
 
@@ -59,6 +66,10 @@ abstract class CrudController extends Controller
      */
     public function store(Request $request)
     {
+        if ($this->model->canNotUseModel) {
+            abort(401, 'Залогинтесь');
+        }
+
         $this->model->create($request->all());
 
         return redirect(route($this->model->view . '.index'))->with('success', 'cool');
@@ -70,6 +81,10 @@ abstract class CrudController extends Controller
      */
     public function edit($id)
     {
+        if ($this->model->canNotUseModel) {
+            abort(401, 'Залогинтесь');
+        }
+
         $model = $this->model->find($id);
         if (!$model) {
             abort(404, 'не нашел');
@@ -85,6 +100,10 @@ abstract class CrudController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if ($this->model->canNotUseModel) {
+            abort(401, 'Залогинтесь');
+        }
+
         $model = $this->model->find($id);
         if (!$model) {
             redirect()->back()->withErrors('error');
@@ -99,6 +118,10 @@ abstract class CrudController extends Controller
      */
     public function destroy($id)
     {
+        if ($this->model->canNotUseModel) {
+            abort(401, 'Залогинтесь');
+        }
+
         $model = $this->model->find($id);
         if ($model) {
             $model->delete();

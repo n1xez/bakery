@@ -6,7 +6,9 @@
 <div class="container">
     <h1>Магазины</h1>
     <div class="form-group">
+        @if(Auth::check() && Auth::user()->is_admin)
         <a class="btn btn-primary" href="{{ route('shops.create') }}">Создать</a>
+        @endif
     </div>
     <table class="table">
         <thead>
@@ -16,7 +18,7 @@
             <th scope="col">Адресс</th>
             <th scope="col">Дата создания</th>
             <th scope="col">Дата изменения</th>
-            <th scope="col">Редактирвоать</th>
+            <th scope="col">Редактировать</th>
             <th scope="col"><i class="fas fa-tv"></i></th>
         </tr>
         </thead>
@@ -29,9 +31,11 @@
                 <td>{{ $model->created_at }}</td>
                 <td>{{ $model->updated_at }}</td>
                 <td>
+                    @if(Auth::check() && Auth::user()->is_admin)
                     <a class="btn btn-primary" href="{{ route('shops.edit', $model->id) }}">
-                        Редактирвоать
+                        Редактировать
                     </a>
+                    @endif
                 </td>
                 <td><a class="btn btn-success" href="{{ route('shops.show', $model->id) }}"><i class="fas fa-tv"></i></a></td>
             </tr>

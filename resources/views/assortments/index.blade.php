@@ -20,7 +20,7 @@
             <th scope="col">Объем производства</th>
             <th scope="col">Дата создания</th>
             <th scope="col">Дата изменения</th>
-            <th scope="col">Редактирвоать</th>
+            <th scope="col">Редактировать</th>
         </tr>
         </thead>
         <tbody>
@@ -37,7 +37,7 @@
                 <td>{{ $model->updated_at }}</td>
                 <td>
                     <a class="btn btn-primary" href="{{ route('assortments.edit', $model->id) }}">
-                        Редактирвоать
+                        Редактировать
                     </a>
                 </td>
             </tr>
