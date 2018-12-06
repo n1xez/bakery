@@ -14,18 +14,12 @@ use Illuminate\Http\Request;
 class UsersController extends CrudController
 {
     /**
-     * @var User
-     */
-    private $model;
-
-    /**
      * ShopsController constructor.
      * @param User $model
      */
     public function __construct(User $model)
     {
         parent::__construct($model);
-        $this->model = $model;
     }
 
     /**

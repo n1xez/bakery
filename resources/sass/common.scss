@@ -60,3 +60,19 @@
   }
 }
 
+.progress {
+  height: 1.5rem;
+  background-color: #a5a5a5;
+  font-size: 1.5em;
+
+  &-red {
+    color: #fefefe;
+    background: #DD2C00;
+  }
+
+  &-yellow {
+    color: #1c1c1c;
+    background: #FFDE03;
+  }
+}
+

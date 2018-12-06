@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Assortments\Assortment;
 use Illuminate\Http\Request;
+use App\Models\Assortments\Assortment;
 
 /**
  * Class AssortmentsController
@@ -18,6 +18,28 @@ class AssortmentsController extends CrudController
     public function __construct(Assortment $model)
     {
         parent::__construct($model);
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Exception
+     * @throws \Illuminate\Container\EntryNotFoundException
+     */
+    public function index()
+    {
+        if ($this->model->canNotUseModel) {
+            abort(401, 'Залогинтесь');
+        }
+        $query = $this->model->newQuery();
+
+        $shop_id = app(Request::class)->get('shop_id');
+        if ($shop_id) {
+            $query->where('shop_id', $shop_id);
+        }
+
+        $models = $query->get();
+
+        return view($this->model->view . '.index', compact('models'));
     }
 
     /**

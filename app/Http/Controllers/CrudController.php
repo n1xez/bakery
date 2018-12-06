@@ -10,7 +10,7 @@ abstract class CrudController extends Controller
     /**
      * @var Model
      */
-    private $model;
+    protected $model;
 
     /**
      * Controller constructor.

@@ -15815,3 +15815,19 @@ readers do not read off random characters that represent icons */
   background: #FFDE03;
 }
 
+.progress {
+  height: 1.5rem;
+  background-color: #a5a5a5;
+  font-size: 1.5em;
+}
+
+.progress-red {
+  color: #fefefe;
+  background: #DD2C00;
+}
+
+.progress-yellow {
+  color: #1c1c1c;
+  background: #FFDE03;
+}
+

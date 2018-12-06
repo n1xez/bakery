@@ -38,12 +38,22 @@
             </tr>
             </thead>
             <tbody>
+            @php $maxSec = $activities->max('seconds') @endphp
             @foreach($activities as $activity)
                 <tr>
                     <td scope="row">{{ $activity->assortment->shop->title }}</td>
                     <td>{{ $activity->assortment->product->title }}</td>
-                    <td><span class="badge badge__{{ $activity->color }}">{{ $activity->color }}</span></td>
-                    <td>{{ $activity->time }}</td>
+                    <td><span class="badge badge__{{ $activity->color }}">{{ $activity->color }}{{$activity->seconds}}</span></td>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar progress-{{ $activity->color}}"
+                                 role="progressbar"
+                                 style="width: {{ $activity->seconds / $maxSec * 100 }}%;"
+                                 aria-valuenow="{{ $activity->seconds / $maxSec * 100 }}"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100">{{ $activity->time }}</div>
+                        </div>
+                    </td>
                 </tr>
             @endforeach
             </tbody>
