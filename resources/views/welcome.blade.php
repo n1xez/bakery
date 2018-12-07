@@ -6,7 +6,7 @@
 
 <div class="wrapper container">
     <div class="jumbotron">
-        <h1>Добро пожаловать в мониторинг в пекарни!</h1>
+        <h1>Добро пожаловать в мониторинг пекарни!</h1>
     </div>
 </div>
 
