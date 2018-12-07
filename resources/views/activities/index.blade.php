@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
-@section('title', 'Page title')
+@section('title', 'Отчет нехватки товаров')
 
 @section('content')
-    <div class="container">
+    <div class="container" id="report">
         <h1>Отчет нехватки товаров</h1>
         {{ Form::open(['url' => route('report'), 'method' => 'get', ]) }}
             <div class="form-group row">
@@ -23,6 +23,11 @@
                     {{ Form::label('finish_date', 'По') }}
                     {{ Form::date('finish_date', $finish_date, ['class' => 'form-control']) }}
                 </div>
+            </div>
+            <div class="float-right">
+                <label class="radio-inline"><input type="radio" class="picker" name="date_picker" value="today"> Сегодня</label>
+                <label class="radio-inline"><input type="radio" class="picker" name="date_picker" value="yesterday"> Вчера</label>
+                <label class="radio-inline"><input type="radio" class="picker" name="date_picker" value="on_week"> За неделю</label>
             </div>
             <div class="form-group">
                 {{ Form::submit('Получить', ['class' => 'btn btn-primary']) }}

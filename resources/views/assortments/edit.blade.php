@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Page title')
+@section('title', 'Изменение ассортимента')
 
 @section('content')
     @if ($errors->any())

@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'Вход')
+
 @section('content')
 <div class="wrapper container">
     <div class="row justify-content-center">

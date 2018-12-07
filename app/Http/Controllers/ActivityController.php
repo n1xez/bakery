@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Activities\Activity;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Models\Activities\Activity;
 
 class ActivityController extends Controller
 {
@@ -41,11 +41,11 @@ class ActivityController extends Controller
         }
 
         if ($start_date) {
-            $query->where('start_date', '>', $start_date);
+            $query->where('start_date', '>', $startDate);
         }
 
         if ($finish_date) {
-            $query->where('start_date', '<', $finish_date);
+            $query->where('start_date', '<', $finishDate);
         }
 
         $query->orderBy('seconds', 'DESC');
@@ -64,7 +64,7 @@ class ActivityController extends Controller
      */
     private function getStartOfDay($startDay)
     {
-        return $startDay ? (new Carbon($startDay))->endOfDay()->toDateTimeString() : null;
+        return $startDay ? (new Carbon($startDay))->startOfDay()->toDateTimeString() : null;
     }
 
     /**

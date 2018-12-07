@@ -13702,6 +13702,39 @@ if ($('#monitor-from').length > 0) {
     setTimeout("window.location.reload()", 30000);
 }
 
+if ($('#report').length > 0) {
+    var setTime = function setTime(startDate, finishDate) {
+        $('#start_date').val(startDate);
+        $('#finish_date').val(finishDate);
+    };
+
+    var getPreviewsDay = function getPreviewsDay(day) {
+        var yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - day);
+
+        return yesterday.toISOString().slice(0, 10);
+    };
+
+    $(".picker").click(function () {
+        var range = $(this).val();
+        var now = new Date().toISOString().slice(0, 10);
+
+        switch (range) {
+            case 'today':
+                setTime(now, now);
+                break;
+            case 'yesterday':
+                var yesterday = getPreviewsDay(1);
+                setTime(yesterday, yesterday);
+                break;
+            case 'on_week':
+                var startWeek = getPreviewsDay(7);
+                setTime(startWeek, now);
+                break;
+        }
+    });
+}
+
 /***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {

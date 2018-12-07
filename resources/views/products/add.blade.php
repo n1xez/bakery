@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Page title')
+@section('title', 'Создание нового продукта')
 
 @section('content')
 {{ Form::open([

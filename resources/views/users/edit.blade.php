@@ -1,13 +1,13 @@
 @extends('layouts.master')
 
-@section('title', 'Page title')
+@section('title', 'Изменение пользователя')
 
 @section('content')
 {{ Form::model($model, [
        'url' => route('users.update', $model->id),
        'method' => 'PATCH',
    ]) }}
-        <h1>Изменение продукта</h1>
+        <h1>Изменение пользователя</h1>
         <div class="form-group">
             {{ Form::label('name', 'Имя') }}
             {{ Form::text('name', null, ['class' => 'form-control', 'readonly']) }}

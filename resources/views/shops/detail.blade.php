@@ -1,6 +1,6 @@
 @extends('layouts.master_clean')
 
-@section('title', 'Page title')
+@section('title', 'Пекарня')
 
 @section('content')
 <div class="container-fluid" id="monitor-from">
