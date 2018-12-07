@@ -13,18 +13,19 @@
     <table class="table">
         <thead>
         <tr>
+            <th scope="col"><i style="margin-left: 11px;" class="fas fa-tv"></i></th>
             <th scope="col">#</th>
             <th scope="col">Название</th>
             <th scope="col">Адресс</th>
             <th scope="col">Дата создания</th>
             <th scope="col">Дата изменения</th>
             <th scope="col">Редактировать</th>
-            <th scope="col"><i class="fas fa-tv"></i></th>
         </tr>
         </thead>
         <tbody>
         @foreach($models as $model)
             <tr>
+                <td><a class="btn btn-success" href="{{ route('shops.show', $model->id) }}"><i class="fas fa-desktop"></i></a></td>
                 <th scope="row">{{ $model->id }}</th>
                 <td>{{ $model->title }}</td>
                 <td>{{ $model->address }}</td>
@@ -37,7 +38,6 @@
                     </a>
                     @endif
                 </td>
-                <td><a class="btn btn-success" href="{{ route('shops.show', $model->id) }}"><i class="fas fa-tv"></i></a></td>
             </tr>
         @endforeach
         </tbody>
