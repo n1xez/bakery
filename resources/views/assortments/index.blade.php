@@ -25,41 +25,43 @@
         </div>
     </div>
     {{ Form::close() }}
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Пекарня</th>
-            <th scope="col">Продукт</th>
-            <th scope="col">Текущие количество</th>
-            <th scope="col">Нормальное количество</th>
-            <th scope="col">Критическое количество</th>
-            <th scope="col">Объем производства</th>
-            <th scope="col">Дата создания</th>
-            <th scope="col">Дата изменения</th>
-            <th scope="col">Редактировать</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($models as $model)
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
             <tr>
-                <th scope="row">{{ $model->id }}</th>
-                <td>{{ $model->shop->title }}</td>
-                <td>{{ $model->product->title }}</td>
-                <td>{{ $model->quantity }}</td>
-                <td>{{ $model->yellow_quantity }}</td>
-                <td>{{ $model->warning_quantity }}</td>
-                <td>{{ $model->volume_production }}</td>
-                <td>{{ $model->created_at }}</td>
-                <td>{{ $model->updated_at }}</td>
-                <td>
-                    <a class="btn btn-primary" href="{{ route('assortments.edit', $model->id) }}">
-                        Редактировать
-                    </a>
-                </td>
+                <th scope="col">#</th>
+                <th scope="col">Пекарня</th>
+                <th scope="col">Продукт</th>
+                <th scope="col">Текущие количество</th>
+                <th scope="col">Нормальное количество</th>
+                <th scope="col">Критическое количество</th>
+                <th scope="col">Объем производства</th>
+                <th scope="col">Дата создания</th>
+                <th scope="col">Дата изменения</th>
+                <th scope="col">Редактировать</th>
             </tr>
-        @endforeach
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            @foreach($models as $model)
+                <tr>
+                    <th scope="row">{{ $model->id }}</th>
+                    <td>{{ $model->shop->title }}</td>
+                    <td>{{ $model->product->title }}</td>
+                    <td>{{ $model->quantity }}</td>
+                    <td>{{ $model->yellow_quantity }}</td>
+                    <td>{{ $model->warning_quantity }}</td>
+                    <td>{{ $model->volume_production }}</td>
+                    <td>{{ $model->created_at }}</td>
+                    <td>{{ $model->updated_at }}</td>
+                    <td>
+                        <a class="btn btn-primary" href="{{ route('assortments.edit', $model->id) }}">
+                            Редактировать
+                        </a>
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    </div>
 </div>
 @endsection
