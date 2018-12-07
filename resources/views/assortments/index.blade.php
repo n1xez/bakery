@@ -25,7 +25,7 @@
         </div>
     </div>
     {{ Form::close() }}
-    <div class="table-responsive">
+    <div class="table-responsive-sm">
         <table class="table">
             <thead>
             <tr>
