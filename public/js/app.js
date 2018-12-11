@@ -13699,21 +13699,16 @@ module.exports = __webpack_require__(36);
 __webpack_require__(12);
 
 if ($('#monitor-from').length > 0) {
-    setTimeout("window.location.reload()", 60000);
+    setTimeout(function () {
+        $("html, body").animate({
+            scrollTop: $('html, body').get(0).scrollHeight
+        }, 40000, "linear");
+    }, 10000);
 
-    (function ($) {
-        $.fn.downAndUp = function (time, repeat) {
-            var elem = this;
-            (function dap() {
-                elem.animate({ scrollTop: elem.outerHeight() }, time, function () {
-                    elem.animate({ scrollTop: 0 }, time, function () {
-                        if (--repeat) dap();
-                    });
-                });
-            })();
-        };
-    })(jQuery);
-    $("html").downAndUp(29800, 10);
+    setTimeout(function () {
+        $(document).scrollTop(0);
+        window.location.reload();
+    }, 60000);
 }
 
 if ($('#report').length > 0) {
