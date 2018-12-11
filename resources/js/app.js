@@ -1,7 +1,7 @@
 require('./bootstrap');
 
 if($('#monitor-from').length > 0) {
-    setTimeout("window.location.reload()", 30000);
+    setTimeout("window.location.reload()", 60000);
 
 
     (function($){
@@ -16,7 +16,7 @@ if($('#monitor-from').length > 0) {
             })();
         }
     })(jQuery);
-    $("html").downAndUp(30000, 10);
+    $("html").downAndUp(29800, 10);
 }
 
 if($('#report').length > 0) {

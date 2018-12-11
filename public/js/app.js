@@ -13699,7 +13699,7 @@ module.exports = __webpack_require__(36);
 __webpack_require__(12);
 
 if ($('#monitor-from').length > 0) {
-    setTimeout("window.location.reload()", 30000);
+    setTimeout("window.location.reload()", 60000);
 
     (function ($) {
         $.fn.downAndUp = function (time, repeat) {
@@ -13713,7 +13713,7 @@ if ($('#monitor-from').length > 0) {
             })();
         };
     })(jQuery);
-    $("html").downAndUp(30000, 10);
+    $("html").downAndUp(29800, 10);
 }
 
 if ($('#report').length > 0) {
