@@ -4,14 +4,8 @@
 
 .panel {
     height: 140px;
-    /*display: flex;
-    justify-content: center;
-    align-items: center;*/
     margin: 10px;
-
-
     border-radius: 20px;
-
 
     &.red {
       color: #fefefe;
@@ -29,18 +23,18 @@
 .panel-content {
 
   &__count {
-    font-size: 6em;
+    font-size: 5em;
     line-height: 1em;
     margin-left: 20px;
   }
 
   &__title {
-    font-size: 2.5em;
+    font-size: 2em;
     line-height: 1em;
     text-align: right;
     margin-right: 20px;
     overflow: hidden;
-    height: 40px;
+    height: 55px;
   }
 }
 
