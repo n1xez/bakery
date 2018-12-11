@@ -15784,7 +15784,7 @@ readers do not read off random characters that represent icons */
 }
 
 .panel {
-  height: 188px;
+  height: 140px;
   /*display: flex;
     justify-content: center;
     align-items: center;*/
@@ -15805,13 +15805,13 @@ readers do not read off random characters that represent icons */
 }
 
 .panel-content__count {
-  font-size: 8em;
+  font-size: 6em;
   line-height: 1em;
   margin-left: 20px;
 }
 
 .panel-content__title {
-  font-size: 4em;
+  font-size: 2.5em;
   line-height: 1em;
   text-align: right;
   margin-right: 20px;

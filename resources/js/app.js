@@ -2,6 +2,21 @@ require('./bootstrap');
 
 if($('#monitor-from').length > 0) {
     setTimeout("window.location.reload()", 30000);
+
+
+    (function($){
+        $.fn.downAndUp = function(time, repeat){
+            var elem = this;
+            (function dap(){
+                elem.animate({scrollTop:elem.outerHeight()}, time, function(){
+                    elem.animate({scrollTop:0}, time, function(){
+                        if(--repeat) dap();
+                    });
+                });
+            })();
+        }
+    })(jQuery);
+    $("html").downAndUp(30000, 10);
 }
 
 if($('#report').length > 0) {
@@ -36,3 +51,4 @@ if($('#report').length > 0) {
         return yesterday.toISOString().slice(0,10);
     }
 }
+

@@ -6,7 +6,7 @@
 <div class="container-fluid" id="monitor-from">
     <div class="row">
         @foreach($assortments as $assortment)
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-3 col-sm-12">
                 <div class="panel {{ $assortment->warningColor }}">
                     <div class="panel-content">
                         <div class="panel-content__count">

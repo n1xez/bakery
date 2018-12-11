@@ -3,7 +3,7 @@
 }
 
 .panel {
-    height: 188px;
+    height: 140px;
     /*display: flex;
     justify-content: center;
     align-items: center;*/
@@ -29,13 +29,13 @@
 .panel-content {
 
   &__count {
-    font-size: 8em;
+    font-size: 6em;
     line-height: 1em;
     margin-left: 20px;
   }
 
   &__title {
-    font-size: 4em;
+    font-size: 2.5em;
     line-height: 1em;
     text-align: right;
     margin-right: 20px;
