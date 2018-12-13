@@ -37,7 +37,7 @@ class ActivityManager
         $currentActivities = $this->getAllActive();
         $problemAssortment = $this->getAllProblemAssortment();
 
-        $this->closeAllWithoutProblem($currentActivities, $problemAssortment);
+        $this->closeAllWithoutProblem($currentActivities, $problemAssortment->keyBy('id'));
         $this->checkAssortment($currentActivities, $problemAssortment);
     }
 
@@ -46,7 +46,7 @@ class ActivityManager
      */
     private function getAllActive()
     {
-        return $this->activity->where('is_active', true)->get();
+        return $this->activity->where('is_active', 1)->get();
     }
 
     /**
@@ -66,7 +66,10 @@ class ActivityManager
      */
     private function closeAllWithoutProblem($currentActivities, $problemAssortment)
     {
-        $activitiesForClosing = $currentActivities->except($problemAssortment->pluck('id')->toArray());
+        $activitiesForClosing = $currentActivities->filter(function ($item) use($problemAssortment) {
+            return !$problemAssortment->get($item->assortment_id);
+        });
+
         foreach ($activitiesForClosing as $activity) {
             $this->activityFinish($activity);
         }
